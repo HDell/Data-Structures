@@ -1,9 +1,9 @@
 import unittest
-from queue import Queue2
+from queue import Queue
 
 class QueueTests(unittest.TestCase):
     def setUp(self):
-        self.q = Queue2()
+        self.q = Queue()
 
     def test_len_returns_0_for_empty_queue(self):
         self.assertEqual(len(self.q), 0)
