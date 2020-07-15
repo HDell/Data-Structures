@@ -28,7 +28,7 @@ class DoublyLinkedList:
     """
     def add_to_head(self, value): #OK
         if self.length == 0:
-            self.head = ListNode(value, None, None)
+            self.head = ListNode(value)
             self.tail = self.head
         else:
             new_node = ListNode(value, None, self.head)
@@ -48,14 +48,12 @@ class DoublyLinkedList:
             value = self.head.value
             self.head = None
             self.tail = None
-            self.length -= 1
-            return value
         else:
             value = self.head.value
             self.head = self.head.next
             self.head.prev = None
-            self.length -= 1
-            return value
+        self.length -= 1
+        return value
         
     """
     Wraps the given value in a ListNode and inserts it 
@@ -64,7 +62,7 @@ class DoublyLinkedList:
     """
     def add_to_tail(self, value): #OK
         if self.length == 0:
-            new_node = ListNode(value, None, None)
+            new_node = ListNode(value)
             self.head = new_node
             self.tail = new_node
             self.length += 1
